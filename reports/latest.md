@@ -7,7 +7,7 @@
 - 任务：LOOP-001「做一个3D模型网页展示，讲解厄尔尼诺现象是怎么形成的，带来什么影响」。
 - 规划案：handoff/plans/LOOP-001.md（网页版 ChatGPT High 产出，nonce 1a9a154b5a4afd0a，brief_sha f78bbbd…，verify 通过）。
 - 投递通道：**A（网页聊天模式，思考强度 High）**，对话 https://chatgpt.com/c/6adf303f-f3fc-83e8-af9f-55e27ea2307c。调研标杆：NOAA PMEL ENSO 示意图、NASA SVS 2015–16 ENSO、NASA Eyes on the Earth、earth.nullschool.net、NASA Earth Observatory（规划案 §2.1 列明）。
-- 被测源码 SHA：75b6a78 之后的工作树（报告提交时记录最终 SHA）。
+- 被测源码 SHA：43403e7（产品与报告同批提交）。
 - 环境：macOS arm64，Node v24.21.0，npm 11.12.1，Chrome（Kimi WebBridge 驱动，设备像素比 2）。
 - 交付入口：仓库根目录 `npm run dev`（预览宿主会分配端口；逻辑端口 7100）。
 
