@@ -1,0 +1,86 @@
+/* 设计令牌唯一真源。禁止在其它文件书写裸 HEX（场景主题映射除外，见 src/scene/theme.js）。 */
+:root {
+  /* 颜色 */
+  --c-page: #071522;
+  --c-panel: #0d2335;
+  --c-elevated: #143147;
+  --c-active: #1a3950;
+  --c-text: #f5fafd;
+  --c-secondary: #c6dce7;
+  --c-tertiary: #93b3c6;
+  --c-on-accent: #071522;
+  --c-border-subtle: #6d90a6;
+  --c-border-strong: #78e1ee;
+  --c-accent: #78e1ee;
+  --c-warm: #ffbc7c;
+  --c-success: #80e5b0;
+  --c-warning: #ffde86;
+  --c-danger: #ff6b6b;
+  --c-info: #93b3c6;
+  --c-ocean-cold: #26aec5;
+  --c-ocean-mid: #f1c16e;
+  --c-ocean-warm: #ef8559;
+  --c-deep-sea: #0a5c78;
+  --c-thermocline: #fce4a7;
+  --c-wind: #e8f8ff;
+  --c-rain: #78e1ee;
+  --c-disabled: #6d90a6;
+  --c-overlay: rgba(7, 21, 34, 0.88);
+
+  /* 字阶（@16px root，倍率 1.25） */
+  --fs-0: 0.75rem; /* 12px */
+  --fs-1: 0.875rem; /* 14px */
+  --fs-2: 1rem; /* 16px */
+  --fs-3: 1.25rem; /* 20px */
+  --fs-4: 1.5625rem; /* 25px */
+  --fs-5: 1.953125rem; /* 31.25px */
+  --fs-6: 2.44140625rem; /* 39.06px */
+  --fs-7: 3.0517578125rem; /* 48.83px，本轮不用 */
+
+  /* 间距（4px 基线） */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  /* 圆角 */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* 阴影 */
+  --shadow-e1: 0 4px 16px rgba(0, 0, 0, 0.16);
+  --shadow-e2: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --shadow-e3: 0 16px 48px rgba(0, 0, 0, 0.3);
+  --shadow-e4: 0 24px 64px rgba(0, 0, 0, 0.36);
+
+  /* 层级 */
+  --z-base: 0;
+  --z-scene: 1;
+  --z-hud: 2;
+  --z-controls: 3;
+  --z-dropdown: 20;
+  --z-modal: 30;
+  --z-toast: 40;
+
+  /* 缓动与时间 */
+  --ease-ui: cubic-bezier(0.2, 0, 0.2, 1);
+  --ease-narrative: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-tap: 120ms;
+  --t-toggle: 240ms;
+  --t-enter: 420ms;
+  --t-physical: 1000ms;
+
+  /* 字体栈 */
+  --font-zh: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', 'Source Han Sans SC',
+    sans-serif;
+  --font-latin: 'Avenir Next', 'Helvetica Neue', 'Inter', Arial, sans-serif;
+}

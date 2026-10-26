@@ -1,0 +1,19 @@
+{
+  "name": "el-nino-3d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "厄尔尼诺：赤道太平洋海气耦合的 3D 交互解释（中文单页教育演示）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}
