@@ -1,6 +1,6 @@
 <!-- skloop-handoff
 kind: brief
-task: 做一个3D模型网页展示，讲解厄尔尼诺现象是怎么形成的，带来什么影响
+task: LOOP-001
 round: 1
 nonce: 1a9a154b5a4afd0a
 -->
