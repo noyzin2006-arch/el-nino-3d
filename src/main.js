@@ -69,6 +69,13 @@ const ui = mountUI(app, {
     if (animator) animator.setPaused(paused);
   },
   onRetry: () => {
+    // 重建渲染器最稳妥的方式：换一张全新 canvas（全新上下文），再挂载场景
+    const oldCanvas = document.getElementById('scene-canvas');
+    if (oldCanvas) {
+      const fresh = oldCanvas.cloneNode(false);
+      oldCanvas.parentElement.replaceChild(fresh, oldCanvas);
+      ui.canvas = fresh;
+    }
     mountSceneSafely(true);
   },
   onUseText: () => {
@@ -108,6 +115,7 @@ async function mountSceneSafely(isRetry = false) {
       onError: (err) => {
         clearTimeout(slowTimer);
         clearTimeout(stuckTimer);
+        window.__lastError = err && err.code ? err.code : 'WEBGL_UNAVAILABLE';
         applyState({
           sceneStatus: 'fallback',
           errorCode: err && err.code ? err.code : 'WEBGL_UNAVAILABLE',

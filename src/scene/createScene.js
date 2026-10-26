@@ -62,8 +62,14 @@ export function mountScene(container, callbacks) {
 
   let destroyed = false;
   let contextLost = false;
+  const listeners = [];
+  const on = (target, type, fn, opts) => {
+    target.addEventListener(type, fn, opts);
+    listeners.push([target, type, fn]);
+  };
 
-  canvas.addEventListener(
+  on(
+    canvas,
     'webglcontextlost',
     (e) => {
       e.preventDefault();
@@ -73,13 +79,9 @@ export function mountScene(container, callbacks) {
     false,
   );
 
-  canvas.addEventListener(
-    'webglcontextrestored',
-    () => {
-      contextLost = false;
-    },
-    false,
-  );
+  on(canvas, 'webglcontextrestored', () => {
+    contextLost = false;
+  });
 
   function resize() {
     if (destroyed) return;
@@ -144,6 +146,7 @@ export function mountScene(container, callbacks) {
   function destroy() {
     destroyed = true;
     if (camTween) cancelAnimationFrame(camTween.raf);
+    for (const [t, type, fn] of listeners) t.removeEventListener(type, fn);
     ro.disconnect();
     controls.dispose();
     ocean.dispose();

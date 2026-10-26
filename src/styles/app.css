@@ -752,15 +752,6 @@ button {
   }
 }
 
-/* 200% 字体缩放时允许容器自然增长 */
-@media (min-resolution: 1.5dppx) {
-  .canvas-frame {
-    min-height: 320px;
-    height: auto;
-    aspect-ratio: 16 / 10;
-  }
-}
-
 /* 减弱动效 */
 @media (prefers-reduced-motion: reduce) {
   *,

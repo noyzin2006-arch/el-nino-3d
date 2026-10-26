@@ -205,7 +205,7 @@ export function mountUI(root, callbacks) {
     el(
       'p',
       'footer-note',
-      '本页是概念示意：箭头速度、温跃层高度和海表颜色均不按实际比例，也不展示任何实时监测数据或未来预测。想查当前 ENSO 状况，请访问 NOAA / NASA 的 official 页面。每一次厄尔尼诺事件的强度、位置和具体影响都不完全相同。',
+      '本页是概念示意：箭头速度、温跃层高度和海表颜色均不按实际比例，也不展示任何实时监测数据或未来预测。想查当前 ENSO 状况，请访问 NOAA / NASA 的官方页面。每一次厄尔尼诺事件的强度、位置和具体影响都不完全相同。',
     ),
   );
   const sourceList = el('ul', 'source-list');
@@ -225,6 +225,8 @@ export function mountUI(root, callbacks) {
   page.append(header, nav, mainGrid, impactSection, footer);
   root.append(page);
 
+  let liveCanvas = canvas;
+
   /* ------- 渲染 ------- */
   function renderChapter(chapterId) {
     const chapter = CHAPTERS[getChapterIndex(chapterId)];
@@ -240,7 +242,7 @@ export function mountUI(root, callbacks) {
       li.append(el('span', 'fact-label', fact.label), el('span', 'fact-value', fact.value));
       factsList.append(li);
     }
-    canvas.setAttribute('aria-label', chapter.srSummary);
+    liveCanvas.setAttribute('aria-label', chapter.srSummary);
     figcaption.textContent = chapter.srSummary;
   }
 
@@ -320,7 +322,12 @@ export function mountUI(root, callbacks) {
     setBanner,
     setLoadingStage,
     destroy,
-    canvas,
+    get canvas() {
+      return liveCanvas;
+    },
+    set canvas(el) {
+      liveCanvas = el;
+    },
     resetButton,
     pauseButton,
   };

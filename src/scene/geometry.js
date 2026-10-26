@@ -395,9 +395,9 @@ export function createOceanSystem(THREE, theme, initialResolution = { w: 800, h:
       lastOcean = ocean;
     }
 
-    // 信风：长度/透明度联动
-    const windLen = 1.4 * (0.35 + 0.65 * p.tradeStrength);
-    const windOpacity = 0.25 + 0.75 * p.tradeStrength;
+    // 信风：长度/透明度联动（厄尔尼诺态减弱但保持可辨）
+    const windLen = 1.4 * (0.45 + 0.55 * p.tradeStrength);
+    const windOpacity = 0.45 + 0.55 * p.tradeStrength;
     for (const helper of windArrows) {
       helper.setLength(windLen, 0.34, 0.2);
       helper.line.material.opacity = windOpacity;
